@@ -112,10 +112,13 @@ body::after {
 
 #nombre {
   font-family: 'Share Tech Mono', monospace;
-  font-size: clamp(4rem, 15vw, 12rem);
-  letter-spacing: 0.12em;
+  font-size: clamp(1.3rem, 7vw, 4.2rem);
+  letter-spacing: 0.1em;
   color: #fff;
   user-select: none;
+  text-align: center;
+  max-width: 90vw;
+  min-width: 0;
   transform: scale(1);
   transform-origin: center center;
   transition: transform 0.8s cubic-bezier(0.4, 0, 0.2, 1),
@@ -824,6 +827,12 @@ body::after {
   opacity: 0.75;
 }
 
+/* Botón de cerrar de las grillas (arte / videojuegos), pensado para mobile
+   — ahí volver tocando los bordes del backdrop es más difícil */
+.cards-close {
+  display: none;
+}
+
 /* ── VIDEOJUEGOS — tarjetas verticales ── */
 #juegos-cards {
   position: fixed;
@@ -1446,6 +1455,40 @@ body { cursor: none; }
   #lightbox-close {
     top: 12px;
     right: 14px;
+  }
+
+  /* Botón de cerrar de arte / videojuegos: solo aparece en mobile,
+     porque en desktop siempre se puede tocar el backdrop de sobra */
+  .cards-close {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 12px;
+    right: 14px;
+    width: 36px;
+    height: 36px;
+    background: rgba(3, 3, 6, 0.7);
+    border: 1px solid var(--gold-dim);
+    color: rgba(208, 221, 245, 0.7);
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 16;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease, color 0.2s, border-color 0.2s;
+  }
+
+  .cards-close.visible {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  .cards-close:hover,
+  .cards-close:active {
+    color: var(--gold);
+    border-color: var(--gold);
   }
 }
 

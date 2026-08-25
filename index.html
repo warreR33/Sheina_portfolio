@@ -44,7 +44,7 @@
   <!-- Pantalla de entrada -->
   <div id="intro">
     <div id="intro-nombre">
-      <p id="nombre">ENTER</p>
+      <p id="nombre">Lorenzo Lodigiani</p>
     </div>
     <div id="lang-select">
       <div class="lang-opciones">
@@ -147,6 +147,10 @@
   <div id="arte-cards">
     <div class="arte-grid" id="arte-grid"></div>
   </div>
+  <!-- Botón de cerrar propio (mobile): volver tocando los bordes del
+       backdrop ahí es más difícil. Fuera de #arte-cards a propósito,
+       porque ese contenedor tiene transform y rompería su position:fixed -->
+  <button id="arte-cerrar" class="cards-close" aria-label="Cerrar">×</button>
 
   <!-- Contacto — fichas -->
   <div id="contacto-cards">
@@ -157,6 +161,7 @@
   <div id="juegos-cards">
     <div class="juegos-grid" id="juegos-grid"></div>
   </div>
+  <button id="juegos-cerrar" class="cards-close" aria-label="Cerrar">×</button>
 
   <!-- Lightbox -->
   <div id="lightbox">

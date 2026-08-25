@@ -458,6 +458,8 @@ function volverAlSistema() {
   arteGrid.querySelectorAll('.arte-card').forEach(c => c.classList.remove('activo'));
   contactoCards.classList.remove('activo');
   contactoGrid.querySelectorAll('.contacto-card').forEach(c => c.classList.remove('activo'));
+  arteCerrar.classList.remove('visible');
+  juegosCerrar.classList.remove('visible');
   cerrarLightbox();
   backdrop.classList.remove('visible', 'blur');
   sistemaSolar.style.pointerEvents = '';
@@ -785,6 +787,8 @@ const PROYECTOS_JUEGOS = [
 // ── GENERACIÓN DE TARJETAS (ARTE) ──
 const arteCards = document.getElementById('arte-cards');
 const arteGrid  = document.getElementById('arte-grid');
+const arteCerrar = document.getElementById('arte-cerrar');
+arteCerrar.addEventListener('click', volverAlSistema);
 
 function generarArte() {
   arteGrid.innerHTML = '';
@@ -809,6 +813,7 @@ function abrirArte() {
   backdrop.classList.add('visible', 'blur');
   sistemaSolar.style.pointerEvents = 'none';
   arteCards.classList.add('activo');
+  arteCerrar.classList.add('visible');
 
   arteGrid.querySelectorAll('.arte-card').forEach((card, i) => {
     setTimeout(() => {
@@ -823,6 +828,8 @@ function abrirArte() {
 // ── GENERACIÓN DE TARJETAS (VIDEOJUEGOS) ──
 const juegosCards = document.getElementById('juegos-cards');
 const juegosGrid   = document.getElementById('juegos-grid');
+const juegosCerrar = document.getElementById('juegos-cerrar');
+juegosCerrar.addEventListener('click', volverAlSistema);
 
 function generarJuegos() {
   juegosGrid.innerHTML = '';
@@ -848,6 +855,7 @@ function abrirJuegos() {
   backdrop.classList.add('visible', 'blur');
   sistemaSolar.style.pointerEvents = 'none';
   juegosCards.classList.add('activo');
+  juegosCerrar.classList.add('visible');
 
   juegosGrid.querySelectorAll('.game-card').forEach((card, i) => {
     setTimeout(() => {
