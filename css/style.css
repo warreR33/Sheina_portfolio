@@ -258,11 +258,14 @@ body::after {
 
 /* Posición de cada planeta. --angulo lo hereda .planeta desde acá.
    0deg = derecha, 90deg = abajo, 270deg = arriba.
-   Escritorio: el sol está abajo y los planetas describen un arco superior. */
-.orbita-vj   { --radio: 442px; --angulo: 200deg; }
-.orbita-arte { --radio: 510px; --angulo: 256deg; }
-.orbita-cto  { --radio: 578px; --angulo: 284deg; }
-.orbita-cv   { --radio: 646px; --angulo: 312deg; }
+   Escritorio: el sol está abajo y los planetas describen un arco superior.
+   Ángulos simétricos respecto de 270deg, separados 40deg entre sí.
+   Cada planeta tiene su propia órbita, pero los radios van emparejados
+   (externos parecidos, internos parecidos) para que el arco no se incline. */
+.orbita-vj   { --radio: 470px; --angulo: 210deg; }
+.orbita-arte { --radio: 540px; --angulo: 250deg; }
+.orbita-cto  { --radio: 570px; --angulo: 290deg; }
+.orbita-cv   { --radio: 500px; --angulo: 330deg; }
 
 /* ── ESQUINAS DECORATIVAS ── */
 #sistema-solar::before,
@@ -1391,11 +1394,12 @@ body { cursor: none; }
     height: 240px;
   }
 
-  /* 0deg = derecha. El arco va de arriba-derecha a abajo-derecha. */
-  .orbita-vj   { --radio: 300px; --angulo: 305deg; }
-  .orbita-arte { --radio: 250px; --angulo: 342deg; }
-  .orbita-cto  { --radio: 250px; --angulo:  18deg; }
-  .orbita-cv   { --radio: 300px; --angulo:  55deg; }
+  /* 0deg = derecha. El arco va de arriba-derecha a abajo-derecha.
+     Simétrico respecto de 0deg, separados 36deg, una órbita por planeta. */
+  .orbita-vj   { --radio: 295px; --angulo: 306deg; }
+  .orbita-arte { --radio: 245px; --angulo: 342deg; }
+  .orbita-cto  { --radio: 265px; --angulo:  18deg; }
+  .orbita-cv   { --radio: 315px; --angulo:  54deg; }
 
   /* Las esquinas decorativas achican para no chocar con los planetas */
   #sistema-solar::before,
