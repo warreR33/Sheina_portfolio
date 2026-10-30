@@ -660,8 +660,7 @@ const PROYECTOS_ARTE = [
     imgs: [
       'media/crimson_draft_1.mp4',
       'media/crimson_draft_2.mp4',
-      'media/crimson_draft_3.mp4',
-      'media/crimson_draft_4.mp4'
+      'media/crimson_draft_3.mp4'
     ],
     descKey: 'arte.crimson.desc'
   },
