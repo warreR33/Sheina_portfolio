@@ -857,10 +857,14 @@ body::after {
 .juegos-grid {
   display: flex;
   gap: 22px;
+  /* 4 fichas de 230px + 3 gaps; se achican en pantallas angostas.
+     El ancho explícito hace falta porque el contenedor es fixed sin ancho propio */
+  width: min(986px, 94vw);
 }
 
 .game-card {
   width: 230px;
+  min-width: 0;
   display: flex;
   flex-direction: column;
   gap: 12px;

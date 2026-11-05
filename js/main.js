@@ -20,6 +20,8 @@ const t = {
     'card.alice.desc': 'Novela visual thriller donde interpretás a un psicólogo policial investigando múltiples asesinatos. ¿Alice es culpable o también una víctima?',
     'card.sands.rol':  'Arte · Narrativa',
     'card.sands.desc': 'Horror de supervivencia que mezcla el Antiguo Egipto con el Viejo Oeste. Un grupo de mercenarios explora templos mientras enfrenta criaturas sobrenaturales.',
+    'card.crimson.rol':  'Arte · UI/UX · Level Design',
+    'card.crimson.desc': 'RPG táctico de survival horror a bordo de un petrolero en el Atlántico Norte. Un equipo de operaciones especiales aborda el barco silenciado, con munición limitada y sin extracción.',
     'panel.arte':        'Ilustraciones, diseños y trabajos visuales',
     'panel.videojuegos': 'Proyectos y juegos en los que participé',
     'panel.cv':          'Descargar CV',
@@ -52,6 +54,8 @@ const t = {
     'card.alice.desc': 'A thriller visual novel where you play as a police psychologist investigating multiple murders. Is Alice guilty — or just another victim?',
     'card.sands.rol':  'Art · Narrative',
     'card.sands.desc': 'A survival horror experience blending ancient Egyptian and Wild West aesthetics. A mercenary band explores temples while confronting supernatural creatures.',
+    'card.crimson.rol':  'Art · UI/UX · Level Design',
+    'card.crimson.desc': 'A tactical survival horror RPG aboard a tanker in the North Atlantic. A special ops team boards the silent ship with limited ammo and no extraction.',
     'panel.arte':        'Illustrations, designs and visual work',
     'panel.videojuegos': 'Projects and games I worked on',
     'panel.cv':          'Download CV',
@@ -734,6 +738,27 @@ const PROYECTOS_ARTE = [
 ];
 
 const PROYECTOS_JUEGOS = [
+  {
+    titulo: 'Crimson Draft',
+    genero: 'Survival Horror · Tactical · RPG',
+    rolKey: 'card.crimson.rol',
+    descKey: 'card.crimson.desc',
+    href: 'https://phaseoneworks.itch.io/crimson-draft',
+    icono: 'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3Ny5wbmc=/347x500/TEMEYN.png',
+    imgs: [
+      'https://img.itch.zone/aW1nLzMxNTYxMzgzLnBuZw==/original/CCTEtA.png',
+      'https://img.itch.zone/aW1nLzMxNTYxNjc4LmdpZg==/original/MPeyR%2F.gif',
+      'https://img.itch.zone/aW1nLzMxNTYxNjU4LmdpZg==/original/BUqBpJ.gif',
+      'https://img.itch.zone/aW1nLzMxNTYxNjg5LmdpZg==/original/DXlgFn.gif',
+      'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3Ni5wbmc=/original/Y8PIYU.png',
+      'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3My5wbmc=/original/tPkCRL.png',
+      'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3NC5wbmc=/original/QkvFMi.png',
+      'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3NS5wbmc=/original/m4RC0I.png',
+      'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3Ny5wbmc=/original/O4xOXS.png',
+      'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTY4Mzk1OS5wbmc=/original/TJGuZE.png',
+      'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTgxODIxOS5naWY=/original/5J2k5Z.gif'
+    ]
+  },
   {
     titulo: 'ONИA',
     genero: 'Action · Shooter · Roguelike',
