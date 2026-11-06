@@ -744,12 +744,9 @@ const PROYECTOS_JUEGOS = [
     rolKey: 'card.crimson.rol',
     descKey: 'card.crimson.desc',
     href: 'https://phaseoneworks.itch.io/crimson-draft',
-    icono: 'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3Ny5wbmc=/347x500/TEMEYN.png',
+    icono: 'media/Crimson_Draft.webp',
     imgs: [
       'https://img.itch.zone/aW1nLzMxNTYxMzgzLnBuZw==/original/CCTEtA.png',
-      'https://img.itch.zone/aW1nLzMxNTYxNjc4LmdpZg==/original/MPeyR%2F.gif',
-      'https://img.itch.zone/aW1nLzMxNTYxNjU4LmdpZg==/original/BUqBpJ.gif',
-      'https://img.itch.zone/aW1nLzMxNTYxNjg5LmdpZg==/original/DXlgFn.gif',
       'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3Ni5wbmc=/original/Y8PIYU.png',
       'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3My5wbmc=/original/tPkCRL.png',
       'https://img.itch.zone/aW1hZ2UvNTIwNDgyNS8zMTU2MDk3NC5wbmc=/original/QkvFMi.png',
