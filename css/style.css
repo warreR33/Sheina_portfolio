@@ -106,6 +106,7 @@ body::after {
 #intro-nombre {
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
@@ -131,6 +132,29 @@ body::after {
 #intro.zoom-out #nombre {
   transform: scale(30);
   opacity: 0;
+}
+
+/* "Press to start" — parpadeo lento debajo del nombre */
+#press-start {
+  font-family: 'Share Tech Mono', monospace;
+  font-size: clamp(0.7rem, 2.2vw, 1rem);
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: rgba(208, 221, 245, 0.85);
+  margin-top: 28px;
+  user-select: none;
+  animation: blink-lento 2.6s ease-in-out infinite;
+  transition: opacity 0.4s ease;
+}
+
+#intro-nombre.iniciado #press-start {
+  animation: none;
+  opacity: 0;
+}
+
+@keyframes blink-lento {
+  0%, 100% { opacity: 0.9; }
+  50%      { opacity: 0.1; }
 }
 
 /* ── SELECCIÓN DE IDIOMA ── */
@@ -230,7 +254,6 @@ body::after {
   position: relative;
   width: 1000px;
   height: 1000px;
-  transform: translateY(50vh);
 }
 
 /* ── LÍNEAS SVG ── */
@@ -258,14 +281,13 @@ body::after {
 
 /* Posición de cada planeta. --angulo lo hereda .planeta desde acá.
    0deg = derecha, 90deg = abajo, 270deg = arriba.
-   Escritorio: el sol está abajo y los planetas describen un arco superior.
-   Ángulos simétricos respecto de 270deg, separados 40deg entre sí.
-   Cada planeta tiene su propia órbita, pero los radios van emparejados
-   (externos parecidos, internos parecidos) para que el arco no se incline. */
-.orbita-vj   { --radio: 470px; --angulo: 210deg; }
-.orbita-arte { --radio: 540px; --angulo: 250deg; }
-.orbita-cto  { --radio: 570px; --angulo: 290deg; }
-.orbita-cv   { --radio: 500px; --angulo: 330deg; }
+   Escritorio: el sol está en el centro y los planetas lo rodean, uno
+   arriba, a la derecha, abajo y a la izquierda. Los de arriba y abajo
+   van en una órbita más chica para que entren en pantallas bajas. */
+.orbita-vj   { --radio: 300px; --angulo: 270deg; }
+.orbita-arte { --radio: 360px; --angulo:   0deg; }
+.orbita-cto  { --radio: 300px; --angulo:  90deg; }
+.orbita-cv   { --radio: 360px; --angulo: 180deg; }
 
 /* ── ESQUINAS DECORATIVAS ── */
 #sistema-solar::before,
@@ -830,10 +852,37 @@ body::after {
   opacity: 0.75;
 }
 
-/* Botón de cerrar de las grillas (arte / videojuegos), pensado para mobile
-   — ahí volver tocando los bordes del backdrop es más difícil */
+/* Botón de cerrar de las grillas (arte / videojuegos) */
 .cards-close {
-  display: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 24px;
+  right: 32px;
+  width: 36px;
+  height: 36px;
+  background: rgba(3, 3, 6, 0.7);
+  border: 1px solid var(--gold-dim);
+  color: rgba(208, 221, 245, 0.7);
+  font-size: 1.4rem;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 16;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease, color 0.2s, border-color 0.2s;
+}
+
+.cards-close.visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.cards-close:hover,
+.cards-close:active {
+  color: var(--gold);
+  border-color: var(--gold);
 }
 
 /* ── VIDEOJUEGOS — tarjetas verticales ── */
@@ -1465,38 +1514,10 @@ body { cursor: none; }
     right: 14px;
   }
 
-  /* Botón de cerrar de arte / videojuegos: solo aparece en mobile,
-     porque en desktop siempre se puede tocar el backdrop de sobra */
+  /* Botón de cerrar de arte / videojuegos: más pegado a la esquina */
   .cards-close {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: fixed;
     top: 12px;
     right: 14px;
-    width: 36px;
-    height: 36px;
-    background: rgba(3, 3, 6, 0.7);
-    border: 1px solid var(--gold-dim);
-    color: rgba(208, 221, 245, 0.7);
-    font-size: 1.4rem;
-    line-height: 1;
-    cursor: pointer;
-    z-index: 16;
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 0.2s ease, color 0.2s, border-color 0.2s;
-  }
-
-  .cards-close.visible {
-    opacity: 1;
-    pointer-events: all;
-  }
-
-  .cards-close:hover,
-  .cards-close:active {
-    color: var(--gold);
-    border-color: var(--gold);
   }
 }
 

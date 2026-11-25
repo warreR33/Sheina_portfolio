@@ -324,6 +324,7 @@ const sol          = document.getElementById('sol');
 // ── FLUJO: NOMBRE → IDIOMA → SISTEMA ──
 introNombre.addEventListener('click', () => {
   introNombre.style.pointerEvents = 'none';
+  introNombre.classList.add('iniciado');
   const stored = localStorage.getItem('sheina-lang');
   if (stored) {
     aplicarIdioma(stored);
@@ -523,9 +524,13 @@ function dibujarLineas() {
                'rgba(210,225,248,0.32)', 0.8);
   });
 
-  // Constelación: cadena entre planetas
-  for (let i = 0; i < CADENA.length - 1; i++) {
-    const a = pos[CADENA[i]], b = pos[CADENA[i + 1]];
+  // Constelación: une cada planeta con el siguiente. En escritorio los
+  // planetas rodean al sol, así que el último también se une al primero
+  // y se cierra el anillo; en mobile forman un arco abierto.
+  const anillo = !window.matchMedia('(max-width: 820px)').matches;
+  const tramos = anillo ? CADENA.length : CADENA.length - 1;
+  for (let i = 0; i < tramos; i++) {
+    const a = pos[CADENA[i]], b = pos[CADENA[(i + 1) % CADENA.length]];
     if (a && b) crearLinea(a[0], a[1], b[0], b[1], 'rgba(210,225,248,0.18)', 0.6, '3 6');
   }
 }
